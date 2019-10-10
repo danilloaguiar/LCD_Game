@@ -1,0 +1,91 @@
+{
+    "configurations": [
+        {
+            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/danillo/Documentos/Projects/LCD_Game/include",
+                "/home/danillo/Documentos/Projects/LCD_Game/src",
+                "/home/danillo/.platformio/lib/LiquidCrystal_I2C_ID576",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/Wire/src",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/avr",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32/LL",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32/usb",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32/usb/hid",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32/usb/cdc",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Drivers/STM32F1xx_HAL_Driver/Inc",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Drivers/STM32F1xx_HAL_Driver/Src",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/system/STM32F1xx",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Src",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/CMSIS/CMSIS/Core/Include",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/variants/PILL_F103XX",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/EEPROM/src",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/IWatchdog/src",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/Keyboard/src",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/Mouse/src",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/SPI/src",
+                "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/Servo/src",
+                "/home/danillo/.platformio/packages/tool-unity",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/home/danillo/Documentos/Projects/LCD_Game/include",
+                    "/home/danillo/Documentos/Projects/LCD_Game/src",
+                    "/home/danillo/.platformio/lib/LiquidCrystal_I2C_ID576",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/Wire/src",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/avr",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32/LL",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32/usb",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32/usb/hid",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32/usb/cdc",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Drivers/STM32F1xx_HAL_Driver/Inc",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Drivers/STM32F1xx_HAL_Driver/Src",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/system/STM32F1xx",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Src",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/CMSIS/CMSIS/Core/Include",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/system/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/cores/arduino",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/variants/PILL_F103XX",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/EEPROM/src",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/IWatchdog/src",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/Keyboard/src",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/Mouse/src",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/SPI/src",
+                    "/home/danillo/.platformio/packages/framework-arduinoststm32/libraries/Servo/src",
+                    "/home/danillo/.platformio/packages/tool-unity",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=40003",
+                "STM32F1",
+                "STM32F103xB",
+                "ARDUINO_BLUEPILL_F103C8",
+                "STM32F1xx",
+                "ARDUINO=10808",
+                "ARDUINO_ARCH_STM32",
+                "ARDUINO_BLUEPILL_F103C8",
+                "BOARD_NAME=\"BLUEPILL_F103C8\"",
+                "HAL_UART_MODULE_ENABLED",
+                ""
+            ],
+            "intelliSenseMode": "clang-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "compilerPath": "\"/home/danillo/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc\" -mcpu=cortex-m3 -mthumb"
+        }
+    ],
+    "version": 4
+}

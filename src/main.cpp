@@ -26,21 +26,35 @@ void setup()
   lcd.print("LCD GAME");
   lcd.setCursor(0,1);
   lcd.print("By: Danillo Aguiar");
-  delay(3000);
+  delay(2000);
   lcd.clear();
+}
 
-
+void initGame(){
+  
+  for (int x = 0; x < 16; x += 1) {
+    lcd.clear();  
+    if (x==8){
+      lcd.setCursor(8,0);
+      lcd.write((byte)1);
+    }
+    else{
+      lcd.setCursor(x,1);
+      if (x%2 == 0){
+        lcd.write((byte)0);
+      }
+      else{
+        lcd.write((byte)1);
+      }
+    }
+    lcd.setCursor(16-x,1);
+    lcd.write((byte)2);
+    delay(350);
+  }
 }
 
 
 void loop()
 { 
-  lcd.setCursor(1,0);
-  lcd.write((byte)0);
-  lcd.setCursor(1,0);
-  delay(400);                    
-  lcd.write((byte)1);
-  delay(400);
-  lcd.setCursor(1,1);
-  lcd.write((byte)2);
-  }
+  initGame();
+}
