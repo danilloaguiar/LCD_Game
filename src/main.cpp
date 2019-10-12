@@ -20,11 +20,25 @@ uint8_t tjb[8] = {0b10010, 0b10100,	0b11000,	0b10000,	0b11000,	0b10101,	0b10011,
 
 boolean position = false;
 boolean toy = false;
+boolean o0 = false, o1 = false, o2 = false, o3 = false;
+boolean i0 = true, i1 = true, i2 = true, i3 = true;
+
+
+time_t t;
 
  class transistor {
   public:
+    int position = 16;
+    int linha;
     void andar() {
-      digitalWrite(Pino, HIGH);
+      lcd.setCursor(position, linha);
+      lcd.print(" ");
+      position = position - 1;
+      lcd.setCursor(position, linha);
+      lcd.write((byte)2);
+    }
+    void restart(){
+      position = 16;
     }
 };
 
@@ -47,7 +61,6 @@ void initGame(){
     }
     lcd.setCursor(16-x,1);
     lcd.write((byte)2);
-    delay(350);
   }
 }
 
@@ -76,7 +89,65 @@ void running(){
       toy = true;
     }
   }
-  delay(350);
+
+}
+
+void obstaculos(){
+ 
+ if(t>100 && i0){
+    transistor t0;
+    t0.linha = 0;
+    t0.andar();
+    i0 = false;
+    o0 = true;
+  }
+  if(t>300 && i1){
+    transistor t1;
+    t1.linha = 1;
+    t1.andar();
+    i1 = false;
+    o1 = true;
+  }
+  if(t>500 && i2){
+    transistor t2;
+    t2.linha = 0;
+    t2.andar();
+    i2 = false;
+    o2 = true;
+  }
+  if(t>700 && i3){
+    transistor t3;
+    t3.linha = 1;
+    t3.andar();
+    i3 = false;
+    o3 = true;
+  }
+
+  if(o0){
+    t0.andar();
+    if(t0.position<0){
+      t0.restart();
+    }
+  }
+  if(o1){
+    t1.andar();
+    if(t1.position<0){
+      t1.restart();
+    }
+  }
+  if(o2){
+    t2.andar();
+    if(t2.position<0){
+      t2.restart();
+    }
+  }
+  if(o3){
+    t3.andar();
+    if(t3.position<0){
+      t3.restart();
+    }
+  }
+
 
 }
 
@@ -86,7 +157,7 @@ void setup()
   lcd.init();                      // initialize the lcd 
   
   pinMode(LED, OUTPUT);
-  transistor t0, t1, t2, t3;
+
 
   lcd.createChar(0, toy1);
   lcd.createChar(1, toy2);
@@ -107,6 +178,7 @@ void setup()
 
   lcd.setCursor(0,1);
   lcd.write((byte)0);
+  t.start
 }
 
 
@@ -130,6 +202,11 @@ void loop()
   } 
 
   running();
-  transistor();
+  obstaculos();
+
+
+  if(t0>4000){
+    t.stop;
+  }
 
 }
