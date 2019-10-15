@@ -18,34 +18,44 @@ uint8_t toy2[8] = {0b01100,	0b01100,	0b00000,	0b01111,	0b11110,	0b01100,	0b10010
 
 uint8_t tjb[8] = {0b10010, 0b10100,	0b11000,	0b10000,	0b11000,	0b10101,	0b10011,	0b10111};
 
-boolean position = false;
-boolean toy = false;
-boolean o0 = false, o1 = false, o2 = false, o3 = false;
-boolean i0 = true, i1 = true, i2 = true, i3 = true;
+bool position = false;
+bool toy = false;
+bool o0 = false, o1 = false, o2 = false, o3 = false;
+bool i0 = true, i1 = true, i2 = true, i3 = true;
 
 
-time_t t;
 
- class transistor {
+class transistor {
   public:
     int position = 16;
     int linha;
-    void andar() {
-      lcd.setCursor(position, linha);
-      lcd.print(" ");
-      position = position - 1;
-      lcd.setCursor(position, linha);
-      lcd.write((byte)2);
-    }
-    void restart(){
-      position = 16;
-    }
+    transistor();
+    void andar();
+    void restart();
 };
+
+transistor::transistor(){
+
+}
+
+void transistor::andar() {
+  lcd.setCursor(position, linha);
+  lcd.print(" ");
+  position = position - 1;
+  lcd.setCursor(position, linha);
+  lcd.write((byte)2);
+}
+void transistor::restart(){
+  lcd.setCursor(0, linha);
+  lcd.print(" ");
+  position = 16;
+  
+}
 
 void initGame(){
   
   for (int x = 0; x < 16; x += 1) {
-    lcd.clear();  
+    lcd.clear(); 
     if (x==8){
       lcd.setCursor(8,0);
       lcd.write((byte)1);
@@ -61,6 +71,7 @@ void initGame(){
     }
     lcd.setCursor(16-x,1);
     lcd.write((byte)2);
+    delay(450);
   }
 }
 
@@ -93,30 +104,30 @@ void running(){
 }
 
 void obstaculos(){
- 
- if(t>100 && i0){
-    transistor t0;
+  static transistor t0;
+  static transistor t1;
+  static transistor t2;
+  static transistor t3;
+  
+  if(millis() > 7000 && i0){
     t0.linha = 0;
     t0.andar();
     i0 = false;
     o0 = true;
   }
-  if(t>300 && i1){
-    transistor t1;
+  if(millis() > 10000 && i1){
     t1.linha = 1;
     t1.andar();
     i1 = false;
     o1 = true;
   }
-  if(t>500 && i2){
-    transistor t2;
+  if(millis() > 12500 && i2){
     t2.linha = 0;
     t2.andar();
     i2 = false;
     o2 = true;
   }
-  if(t>700 && i3){
-    transistor t3;
+  if(millis() > 14900 && i3){
     t3.linha = 1;
     t3.andar();
     i3 = false;
@@ -148,7 +159,7 @@ void obstaculos(){
     }
   }
 
-
+  delay(100);
 }
 
 
@@ -178,7 +189,6 @@ void setup()
 
   lcd.setCursor(0,1);
   lcd.write((byte)0);
-  t.start
 }
 
 
@@ -203,10 +213,6 @@ void loop()
 
   running();
   obstaculos();
-
-
-  if(t0>4000){
-    t.stop;
-  }
-
+  
+  delay(400);
 }
