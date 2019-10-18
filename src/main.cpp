@@ -22,7 +22,7 @@ bool position = false;
 bool toy = false;
 bool o0 = false, o1 = false, o2 = false, o3 = false;
 bool i0 = true, i1 = true, i2 = true, i3 = true;
-
+int eixoX;
 
 
 class transistor {
@@ -103,31 +103,31 @@ void running(){
 
 }
 
-void obstaculos(){
-  static transistor t0;
-  static transistor t1;
-  static transistor t2;
-  static transistor t3;
+static transistor t0;
+static transistor t1;
+static transistor t2;
+static transistor t3;
   
-  if(millis() > 7000 && i0){
+void obstaculos(){
+  if(millis() > 15000 && i0){
     t0.linha = 0;
     t0.andar();
     i0 = false;
     o0 = true;
   }
-  if(millis() > 10000 && i1){
+  if(millis() > 20000 && i1){
     t1.linha = 1;
     t1.andar();
     i1 = false;
     o1 = true;
   }
-  if(millis() > 12500 && i2){
+  if(millis() > 23500 && i2){
     t2.linha = 0;
     t2.andar();
     i2 = false;
     o2 = true;
   }
-  if(millis() > 14900 && i3){
+  if(millis() > 28000 && i3){
     t3.linha = 1;
     t3.andar();
     i3 = false;
@@ -162,6 +162,37 @@ void obstaculos(){
   delay(100);
 }
 
+
+void gameover(){
+  if(t0.position == 0 && eixoX == 0){
+      lcd.clear();
+      lcd.setCursor(3,0);
+      lcd.print("GAME OVER");
+    while(1){
+    }
+  }
+  if(t1.position == 0 && eixoX == 1){
+      lcd.clear();
+      lcd.setCursor(3,0);
+      lcd.print("GAME OVER");
+    while(1){
+    }
+  }
+  if(t2.position == 0 && eixoX == 0){
+      lcd.clear();
+      lcd.setCursor(3,0);
+      lcd.print("GAME OVER");
+    while(1){
+    }  
+  }
+  if(t3.position == 0 && eixoX == 1){
+      lcd.clear();
+      lcd.setCursor(3,0);
+      lcd.print("GAME OVER");
+    while(1){
+    }  
+  }
+}
 
 void setup()
 {
@@ -213,6 +244,7 @@ void loop()
 
   running();
   obstaculos();
+  gameover();
   
-  delay(400);
+  delay(300);
 }
